@@ -18,7 +18,7 @@
   "POST to Elasticsearch."
   [esindex formatted-events]
   (let [http-options {:body (str (join "\n" formatted-events) "\n")
-                      :content-type :text
+                      :content-type :json
                       :conn-timeout 5000
                       :socket-timeout 5000
                       :throw-entire-message? true}]
